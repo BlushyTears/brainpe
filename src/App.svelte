@@ -1,9 +1,9 @@
 <script>
-  import Counter from "./lib/Counter.svelte";
   import Music from "./assets/music.mp4";
   import VideoFile from "./assets/brainpepe.mp4";
   import Banner from "./assets/banner.png";
   import Logo from "./assets/pepebrain.png";
+  import Logo2 from "./assets/logo2.png";
   import BG from "./assets/bg.png";
 
   let videoRef;
@@ -43,7 +43,7 @@ function rediredtReounceLink() {
 <svelte:window on:click={enableSound} on:keydown={enableSound} />
 
 
-<div style="background-image: url({BG}); background-size: cover; background-repeat: no-repeat; background-position: center;">
+<div style="background-image: url({BG}); background-size: cover; background-repeat: no-repeat; background-position: center; margin-left: -1rem; width: 101%;">
 
 
 <img class="banner" src={Banner} alt="Banner description" />
@@ -69,20 +69,25 @@ function rediredtReounceLink() {
   </video>
 </div>
 
-<div id="btnContainer">
-  <img class="logo" src={Logo} alt="Logo" />
-  <button class="fancy-button" on:click={redirectBuyLink}>BUY BUY BUY</button>
-</div>
-
-<div id="btnContainer">
-  <img class="logo" src={Logo} alt="Logo" />
-  <button class="fancy-button" style="line-height: 2.5rem;" on:click={redirectTgLink}>TELEGRAM TELEGRAM TELEGRAM</button>
-</div>
-
-<div id="btnContainer">
-  <img class="logo" src={Logo} alt="Logo" />
-  <button class="fancy-button" style="line-height: 2.5rem;" on:click={rediredtReounceLink}>RENOUNCED RENOUNCED RENOUNCED</button>
-</div>
+  <div id="btnContainer">
+    <img class="logo" src={Logo} alt="Logo" />
+    <button class="fancy-button" on:click={redirectBuyLink}>BUY BUY BUY</button>
+  </div>
+  
+  <div id="btnContainer">
+    <img class="logo" src={Logo} alt="Logo" />
+    <button class="fancy-button" style="line-height: 2.5rem;" on:click={redirectTgLink}>TELEGRAM TELEGRAM TELEGRAM</button>
+  </div>
+  
+  <div id="btnContainer">
+    <img class="logo" src={Logo} alt="Logo" />
+    <button class="fancy-button" style="line-height: 2.5rem;" on:click={rediredtReounceLink}>RENOUNCED RENOUNCED RENOUNCED</button>
+  </div>
+  
+  <div id="btnContainer">
+    <img class="logo" src={Logo2} alt="Logo" />
+    <button class="fancy-button" style="padding: 1 2rem; min-width: 36rem;"> CA: 0xa6ca9975568f22c4156f8c94d41c40fa590812c3 </button>
+  </div>
 
 <br>
 <br>
@@ -102,13 +107,6 @@ function rediredtReounceLink() {
 </div>
 
 <style>
-
-:root {
-    background-image: url({BG});
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-  }
 
   #dexscreener-embed {
     position: relative;
@@ -137,11 +135,10 @@ function rediredtReounceLink() {
     position: relative;
     padding: 0;
     z-index: 2;
-    width: 105vw;
+    width: 100vw;
     height: auto;
     max-height: 800px;
     margin-top: -1rem;
-    margin-left: -1rem;
   }
 
   #container {
@@ -156,8 +153,7 @@ function rediredtReounceLink() {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 20vh;
+    height: 30vh;
   }
 
   #backgroundVideo {
@@ -199,25 +195,13 @@ function rediredtReounceLink() {
     }
   }
 
-  .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 50vh;
-    width: 95vw;
-    position: relative;
-    background: none;
-    z-index: 1;
-  }
-
   .logo {
     width: 10rem;
     height: auto;
   }
 
   .fancy-button {
-    width: calc(15% + 5rem);
+    width: calc(25% + 5rem);
     padding: 1rem 2rem;
     font-size: 1.5em;
     color: white;
@@ -233,13 +217,9 @@ function rediredtReounceLink() {
   }
 
   @media (max-width: 768px) {
-    .container {
-      height: 30rem;
-      flex-direction: column;
-    }
 
     #btnContainer {
-      height: 25rem;
+      height: 35rem;
       flex-direction: column;
     }
 
