@@ -4,6 +4,7 @@
   import VideoFile from "./assets/brainpepe.mp4";
   import Banner from "./assets/banner.png";
   import Logo from "./assets/pepebrain.png";
+  import BG from "./assets/bg.png";
 
   let videoRef;
 
@@ -17,14 +18,37 @@
   }
 
   function redirectBuyLink() {
-    window.location.href = 'https://pulsex.mypinata.cloud/ipfs/bafybeiesh56oijasgr7creubue6xt5anivxifrwd5a5argiz4orbed57qi/#/?outputCurrency=0xa6Ca9975568f22C4156f8c94D41C40fa590812C3';
-  }
+  window.open(
+    'https://pulsex.mypinata.cloud/ipfs/bafybeiesh56oijasgr7creubue6xt5anivxifrwd5a5argiz4orbed57qi/#/?outputCurrency=0xa6Ca9975568f22C4156f8c94D41C40fa590812C3',
+    '_blank'
+  );
+}
+
+function redirectTgLink() {
+  window.open(
+    'https://t.me/+WR2-aOv3iElkNWY6',
+    '_blank'
+  );
+}
+
+function rediredtReounceLink() {
+  window.open(
+    'https://bafybeicb2hlad6zs4kc4yvn5xbbzti6krjtpoxrysg42d4e5s5oubbipum.ipfs.dweb.link/#/tx/0xf04ee77bd94f143bddc258b80ff90c65ac660a63e57742f5ce7cee4822f5ca0c',
+    '_blank'
+  );
+}
+
 </script>
+
+<svelte:window on:click={enableSound} on:keydown={enableSound} />
+
+
+<div style="background-image: url({BG}); background-size: cover; background-repeat: no-repeat; background-position: center;">
+
 
 <img class="banner" src={Banner} alt="Banner description" />
 
 <!-- Some browsers might refuse to play music upon key tap, so we try to do it via both onMount and also keyDown -->
-<svelte:window on:click={enableSound} on:keydown={enableSound} />
 
 <video
   bind:this={videoRef}
@@ -45,13 +69,24 @@
   </video>
 </div>
 
-
-
-<div class="container">
+<div id="btnContainer">
   <img class="logo" src={Logo} alt="Logo" />
   <button class="fancy-button" on:click={redirectBuyLink}>BUY BUY BUY</button>
 </div>
 
+<div id="btnContainer">
+  <img class="logo" src={Logo} alt="Logo" />
+  <button class="fancy-button" style="line-height: 2.5rem;" on:click={redirectTgLink}>TELEGRAM TELEGRAM TELEGRAM</button>
+</div>
+
+<div id="btnContainer">
+  <img class="logo" src={Logo} alt="Logo" />
+  <button class="fancy-button" style="line-height: 2.5rem;" on:click={rediredtReounceLink}>RENOUNCED RENOUNCED RENOUNCED</button>
+</div>
+
+<br>
+<br>
+<br>
 
 <div id="dexscreener-embed">
   <iframe
@@ -64,7 +99,17 @@
 <br>
 <br>
 
+</div>
+
 <style>
+
+:root {
+    background-image: url({BG});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
   #dexscreener-embed {
     position: relative;
     margin: 0 auto;
@@ -104,7 +149,15 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 60vh; /* Adjust as needed */
+    height: 60vh;
+  }
+
+  #btnContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
   }
 
   #backgroundVideo {
