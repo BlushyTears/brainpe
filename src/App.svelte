@@ -46,10 +46,13 @@
   display: block;    
   margin: 0 auto;    
   position: relative;
+  padding: 0;
   z-index: 2;
-  width: calc(30vw + 10rem);
+  width: 105vw;
   height: auto;
+  max-height: 800px;
   margin-top: -1rem;
+  margin-left: -1rem;
 }
 
 #backgroundVideo {
@@ -83,7 +86,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 30vh; 
+  height: 70vh; 
   width: 95vw;   
   position: relative;
   background: none; 
