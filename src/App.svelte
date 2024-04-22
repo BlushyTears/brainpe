@@ -217,9 +217,9 @@ function rediredtReounceLink() {
   }
 
   .fancy-button {
-    width: calc(25% + 5rem);
-    padding: 2rem 5rem;
-    font-size: 2em;
+    width: calc(15% + 5rem);
+    padding: 1rem 2rem;
+    font-size: 1.5em;
     color: white;
     border: none;
     border-radius: 5px;
@@ -238,9 +238,16 @@ function rediredtReounceLink() {
       flex-direction: column;
     }
 
+    #btnContainer {
+      height: 25rem;
+      flex-direction: column;
+    }
+
     .logo,
     .fancy-button {
       margin: 0 auto;
+      width: calc(15% + 10rem);
     }
+
   }
 </style>
