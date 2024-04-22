@@ -1,10 +1,9 @@
 <script>
-
-  import Counter from './lib/Counter.svelte'
-  import Music from './assets/music.mp4';
-  import VideoFile from './assets/brainpepe.mp4';
-  import Banner from './assets/banner.png';
-  import Logo from './assets/pepebrain.png';
+  import Counter from "./lib/Counter.svelte";
+  import Music from "./assets/music.mp4";
+  import VideoFile from "./assets/brainpepe.mp4";
+  import Banner from "./assets/banner.png";
+  import Logo from "./assets/pepebrain.png";
 
   let videoRef;
 
@@ -17,84 +16,150 @@
     }
   }
 
+  function redirectBuyLink() {
+    window.location.href = 'https://pulsex.mypinata.cloud/ipfs/bafybeiesh56oijasgr7creubue6xt5anivxifrwd5a5argiz4orbed57qi/#/?outputCurrency=0xa6Ca9975568f22C4156f8c94D41C40fa590812C3';
+  }
 </script>
 
-<img class='banner' src={Banner} alt="Banner description" />
+<img class="banner" src={Banner} alt="Banner description" />
 
- <!-- Some browsers might refuse to play music upon key tap, so we try to do it via both onMount and also keyDown -->
-<svelte:window on:click={enableSound} on:keydown={enableSound}/>
+<!-- Some browsers might refuse to play music upon key tap, so we try to do it via both onMount and also keyDown -->
+<svelte:window on:click={enableSound} on:keydown={enableSound} />
 
-<video bind:this={videoRef} autoplay loop muted playsinline style="display: none;">
-  <source src={Music} type="video/mp4">
+<video
+  bind:this={videoRef}
+  autoplay
+  loop
+  muted
+  playsinline
+  style="display: none;"
+>
+  <source src={Music} type="video/mp4" />
   Your browser does not support the video tag.
 </video>
 
-<video autoplay loop muted playsinline id="backgroundVideo">
-  <source src={VideoFile} type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<div id="container">
+  <video autoplay loop muted playsinline id="backgroundVideo">
+    <source src={VideoFile} type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</div>
+
 
 
 <div class="container">
-  <img class="logo" src={Logo} alt="Logo">
-  <button class="fancy-button">BUY BUY BUY</button>
+  <img class="logo" src={Logo} alt="Logo" />
+  <button class="fancy-button" on:click={redirectBuyLink}>BUY BUY BUY</button>
 </div>
 
+
+<div id="dexscreener-embed">
+  <iframe
+    src="https://dexscreener.com/pulsechain/0x478d2baBB03D60f83Bc9c76E5Ce2aE529d6e996a?embed=1&theme=dark"
+  ></iframe>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
 <style>
+  #dexscreener-embed {
+    position: relative;
+    margin: 0 auto;
+    width: 70%;
+    padding-bottom: 125%;
+    z-index: 2;
+  }
+  @media (min-width: 1400px) {
+    #dexscreener-embed {
+      padding-bottom: 65%;
+    }
+  }
+  #dexscreener-embed iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 0;
+  }
 
-.banner {
-  display: block;    
-  margin: 0 auto;    
-  position: relative;
-  padding: 0;
-  z-index: 2;
-  width: 105vw;
-  height: auto;
-  max-height: 800px;
-  margin-top: -1rem;
-  margin-left: -1rem;
-}
+  .banner {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    z-index: 2;
+    width: 105vw;
+    height: auto;
+    max-height: 800px;
+    margin-top: -1rem;
+    margin-left: -1rem;
+  }
 
-#backgroundVideo {
-    position: fixed; 
-    right: 0;
-    bottom: 0;
-    min-width: 100%; 
-    min-height: 100%;  
+  #container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 60vh; /* Adjust as needed */
+  }
+
+  #backgroundVideo {
+    min-width: 50%;
+    min-height: 50%;
     width: auto;
-    height: auto;  
-    z-index: -100; 
-    object-fit: cover;  
+    height: auto;
+    z-index: -100;
+    object-fit: cover;
     background-size: cover;
     overflow: hidden;
-    z-index: 1; 
+    z-index: 1;
   }
 
   @keyframes rainbow-color {
-    0% { background-color: red; }
-    15% { background-color: orange; }
-    30% { background-color: yellow; }
-    45% { background-color: green; }
-    60% { background-color: blue; }
-    75% { background-color: indigo; }
-    90% { background-color: violet; }
-    100% { background-color: red; }
+    0% {
+      background-color: red;
+    }
+    15% {
+      background-color: orange;
+    }
+    30% {
+      background-color: yellow;
+    }
+    45% {
+      background-color: green;
+    }
+    60% {
+      background-color: blue;
+    }
+    75% {
+      background-color: indigo;
+    }
+    90% {
+      background-color: violet;
+    }
+    100% {
+      background-color: red;
+    }
   }
 
   .container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  height: 70vh; 
-  width: 95vw;   
-  position: relative;
-  background: none; 
-  z-index: 1; 
-}
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    width: 95vw;
+    position: relative;
+    background: none;
+    z-index: 1;
+  }
 
   .logo {
-    width: 10rem; 
+    width: 10rem;
     height: auto;
   }
 
@@ -111,20 +176,18 @@
   }
 
   .fancy-button:hover {
-    transform: scale(1.1); 
+    transform: scale(1.1);
   }
 
   @media (max-width: 768px) {
-  .container {
-    height: 30rem; 
-    flex-direction: column;
-  }
+    .container {
+      height: 30rem;
+      flex-direction: column;
+    }
 
-  .logo, .fancy-button {
-    margin: 0 auto;  
+    .logo,
+    .fancy-button {
+      margin: 0 auto;
+    }
   }
-}
-
-  
 </style>
-
