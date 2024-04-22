@@ -80,6 +80,7 @@
 
   .container {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   height: 30vh; 
@@ -109,6 +110,18 @@
   .fancy-button:hover {
     transform: scale(1.1); 
   }
+
+  @media (max-width: 768px) {
+  .container {
+    height: 30rem; 
+    flex-direction: column;
+  }
+
+  .logo, .fancy-button {
+    margin: 0 auto;  
+  }
+}
+
   
 </style>
 
