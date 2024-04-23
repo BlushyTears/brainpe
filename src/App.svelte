@@ -125,7 +125,7 @@
     <img class="logo" src={Logo2} alt="Logo" />
     <button
       class="fancy-button"
-      style="padding: 1 2rem; min-width: calc(15rem + 20vw); font-size: calc(0.5em + 1vw);"
+      style="padding: 1 2rem; min-width: calc(15rem + 20vw); font-size: calc(0.5em + 0.8vw);"
       on:click={copyAddress}
     >
       CA (Click to copy): 0xa6ca9975568f22c4156f8c94d41c40fa590812c3
